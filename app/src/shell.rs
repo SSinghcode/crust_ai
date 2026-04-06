@@ -14,7 +14,7 @@ pub fn shell(leptos_options: LeptosOptions) -> impl IntoView {
                     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
                 />
                 <link rel="shortcut icon" type_="image/x-icon" href="/favicon.ico" />
-                <link rel="stylesheet" href="/pkg/start_tauri_fullstack.css" />
+                <link rel="stylesheet" href="/pkg/crust_ai.css" />
 
                 // Prevent dark mode flash - must run before page renders
                 <script>
