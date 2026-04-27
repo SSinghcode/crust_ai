@@ -1,4 +1,4 @@
-use icons::{House, Scroll, Settings};
+use icons::{History, MessageSquare};
 use leptos::prelude::*;
 use leptos_router::hooks::use_navigate;
 
@@ -6,19 +6,16 @@ use crate::components::hooks::use_is_current_path::use_is_current_path;
 use crate::components::ui::bottom_nav::{
     BottomNav, BottomNavButton, BottomNavGrid, BottomNavLabel,
 };
-use crate::domain::settings::routes::SettingsRoutes;
-use crate::domain::template::routing::TemplateRoutes;
-use crate::domain::home::HomeRoutes;
+use crate::domain::home::routes::HomeRoutes;
 
 #[component]
 pub fn AppBottomNav() -> impl IntoView {
     let navigate = use_navigate();
     let is_current_path = use_is_current_path();
 
-    let nav_items: [(&'static str, &'static str, AnyView); 3] = [
-        (HomeRoutes::base_url(), HomeRoutes::label(), view! { <House /> }.into_any()),
-        (TemplateRoutes::base_url(), TemplateRoutes::label(), view! { <Scroll /> }.into_any()),
-        (SettingsRoutes::base_url(), SettingsRoutes::label(), view! { <Settings /> }.into_any()),
+    let nav_items: [(&'static str, &'static str, AnyView); 2] = [
+        (HomeRoutes::base_url(), "Chat", view! { <MessageSquare class="size-5" /> }.into_any()),
+        ("/history", "History", view! { <History class="size-5" /> }.into_any()), // route not yet implemented
     ];
 
     view! {
