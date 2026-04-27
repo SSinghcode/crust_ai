@@ -29,7 +29,6 @@ pub async fn build_app_router(conf_file: ConfFile, pool: PgPool) -> anyhow::Resu
 
     Ok(Router::new()
         .route("/api/{*fn_name}", get(server_fn_handler).post(server_fn_handler))
-        // .layer(PropertyAccessLayer::new()) // custom middleware for properties
         .leptos_routes_with_handler(routes, get(leptos_routes_handler))
         .fallback(file_and_error_handler)
         .with_state(app_state))
