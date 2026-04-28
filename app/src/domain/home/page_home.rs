@@ -2,8 +2,18 @@ use icons::{ArrowUp, Menu, Paperclip};
 use leptos::prelude::*;
 use leptos::web_sys::MouseEvent;
 
+const EXAMPLE_CODE: &str = r#"fn greet(name: &str) -> String {
+    format!("Hello, {}! Welcome to Crust AI 🦀", name)
+}
+
+fn main() {
+    let msg = greet("Shamsher");
+    println!("{msg}");
+}"#;
+
 use crate::components::ui::button::{Button, ButtonSize, ButtonVariant};
 use crate::components::ui::button_group::ButtonGroup;
+use crate::components::highlight::{HighlightLanguage, SyntectHighlighterCode};
 use crate::components::ui::input_group::{InputGroup, InputGroupAddon, InputGroupAddonAlign};
 
 #[derive(Clone, Copy, PartialEq)]
@@ -45,9 +55,16 @@ pub fn HomePage() -> impl IntoView {
             </header>
 
             // ── Empty state ──────────────────────────────────────────
-            <div class="flex-1 flex flex-col items-center justify-center gap-3 text-center">
-                <span class="text-5xl select-none">"🦀"</span>
-                <p class="text-sm text-muted-foreground">"What can I help you with?"</p>
+            <div class="flex-1 flex flex-col items-center justify-center gap-6 px-6 text-center">
+                <div>
+                    <span class="text-5xl select-none">"🦀"</span>
+                    <p class="mt-2 text-sm text-muted-foreground">"What can I help you with?"</p>
+                </div>
+                <SyntectHighlighterCode
+                    code=EXAMPLE_CODE
+                    language=HighlightLanguage::Rust
+                    class="w-full max-w-lg text-left text-xs"
+                />
             </div>
 
             // ── Input area ───────────────────────────────────────────
