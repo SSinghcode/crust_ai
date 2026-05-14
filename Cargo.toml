@@ -8,8 +8,13 @@ icons = { version = "0.18", features = ["leptos"] }
 
 anyhow = "1"
 axum = { version = "0.8", features = ["macros"] }
-axum-macros = "0.4"
-console_error_panic_hook = "0.1"
+axum-macros = "0.5.1"
+axum_session ="0.20.1"
+axum_session_auth ="0.20.0"
+axum_session_sqlx="0.9.0"
+async-trait = "0.1"
+chrono = "0.4"
+console_error_panic_hook = "0.1" 
 console_log = "1"
 dotenv = "0.15"
 http = "1"
@@ -20,21 +25,23 @@ leptos_router = { version = "0.8", features = ["nightly"] }
 log = "0.4"
 tw_merge = { version = "0.1", features = ["variant", "debug"]}
 serde = { version = "1", features = ["derive"] }
-struct_field_names = "0.1"
+serde_json = "1"
+struct_field_names = "0.2.1"
 sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "macros", "uuid", "time", "json"] }
-strum = { version = "0.27", features = ["derive"] }
-strum_macros = "0.27"
+strum = { version = "0.28.0", features = ["derive"] }
+strum_macros = "0.28.0"
 thiserror = "2"
 time = { version = "0.3", features = ["serde"] }
-tokio = { version = "1", features = ["rt-multi-thread"] }
+tokio = { version = "1.52.3", features = ["rt-multi-thread"] }
 tower = "0.5"
-tower-http = { version = "0.6", features = ["fs"] }
+tower-http = { version = "0.6.10", features = ["fs"] }
 tracing = "0.1"
 tracing-log = "0.2"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 uuid = { version = "1", default-features = false, features = ["v4", "v7", "js", "serde"] }
-wasm-bindgen = "0.2"
-web-sys = { version = "0.3", features = ["Storage", "Window", "MediaQueryList"] }
+pwhash ="1"
+wasm-bindgen = "0.2.121"
+web-sys = { version = "0.3.98", features = ["Storage", "Window", "MediaQueryList", "Navigator", "Clipboard"] }
 syntect = { version = "5.2", default-features = false, features = ["default-fancy", "regex-fancy"] }
 html-escape = "0.2"
 
