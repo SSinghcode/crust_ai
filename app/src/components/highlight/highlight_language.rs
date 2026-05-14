@@ -9,6 +9,8 @@ pub enum HighlightLanguage {
     Css,
     Toml,
     Bash,
+    JavaScript,
+    Java,
 }
 
 impl HighlightLanguage {
@@ -19,6 +21,8 @@ impl HighlightLanguage {
             "json" => Self::Json,
             "css" => Self::Css,
             "toml" => Self::Toml,
+            "js"=> Self::JavaScript,
+            "java"=> Self::Java,
             "sh" | "bash" => Self::Bash,
             _ => Self::default(),
         }

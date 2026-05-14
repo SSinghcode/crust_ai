@@ -8,7 +8,7 @@ use syntect::util::LinesWithEndings;
 
 use super::toml_highlighter::highlight_toml_manually;
 
-const HIGHLIGHT_THEME: &str = "base16-ocean.light";
+const HIGHLIGHT_THEME: &str = "base16-ocean.dark";
 
 pub fn highlight_code(code: &str, language: Option<&str>, filename: Option<&str>) -> String {
     #[cfg(feature = "ssr")]
@@ -33,6 +33,8 @@ fn highlight_code_impl(
     let theme = theme_set
         .themes
         .get(HIGHLIGHT_THEME)
+        .or_else(|| theme_set.themes.get("base16-eighties.dark"))
+        .or_else(|| theme_set.themes.get("Solarized (dark)"))
         .or_else(|| theme_set.themes.get("InspiredGitHub"))
         .or_else(|| theme_set.themes.values().next())
         .expect("No themes available");
