@@ -1,0 +1,50 @@
+[
+  {
+    "unid": "00000000-0000-0000-0000-000000000001",
+    "title": "React hooks best practices",
+    "preview": "React hooks are special functions that let you hook into React state and lifecycle features.",
+    "message_count": 4,
+    "mode": "developer",
+    "created_at": "2026-04-30T10:32:00Z"
+  },
+  {
+    "unid": "00000000-0000-0000-0000-000000000002",
+    "title": "Rust lifetime errors",
+    "preview": "The borrow checker is complaining about my function signature. Can you explain lifetimes?",
+    "message_count": 7,
+    "mode": "developer",
+    "created_at": "2026-04-29T15:10:00Z"
+  },
+  {
+    "unid": "00000000-0000-0000-0000-000000000003",
+    "title": "Setting up PostgreSQL with SQLx",
+    "preview": "I need help configuring a connection pool and running migrations automatically.",
+    "message_count": 3,
+    "mode": "developer",
+    "created_at": "2026-04-28T09:45:00Z"
+  },
+  {
+    "unid": "00000000-0000-0000-0000-000000000004",
+    "title": "Leptos SSR vs CSR",
+    "preview": "What are the tradeoffs between server-side rendering and client-side rendering in Leptos?",
+    "message_count": 5,
+    "mode": "general",
+    "created_at": "2026-04-27T14:20:00Z"
+  },
+  {
+    "unid": "00000000-0000-0000-0000-000000000005",
+    "title": "Tailwind CSS dark mode setup",
+    "preview": "How do I configure Tailwind CSS 4 dark mode with a custom class strategy?",
+    "message_count": 2,
+    "mode": "developer",
+    "created_at": "2026-04-26T11:00:00Z"
+  },
+  {
+    "unid": "00000000-0000-0000-0000-000000000006",
+    "title": "Async Rust with Tokio",
+    "preview": "Can you explain the difference between spawn and spawn_blocking in Tokio?",
+    "message_count": 6,
+    "mode": "developer",
+    "created_at": "2026-04-25T16:30:00Z"
+  }
+]
