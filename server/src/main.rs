@@ -1,18 +1,20 @@
 #![recursion_limit = "256"]
 
 use std::env;
-
 use dotenv::dotenv;
 use leptos::prelude::*;
 use sqlx::postgres::PgPoolOptions;
 use tracing::info;
 use tracing_log::LogTracer;
 use tracing_subscriber::{EnvFilter, FmtSubscriber};
-
 mod app_router;
 mod fallback;
-
 use app_router::build_app_router::build_app_router;
+use app::domain::auth::model::User;
+use axum_session_sqlx::SessionPgPool;
+use sqlx::PgPool;
+use uuid::Uuid;
+pub type AuthSession = axum_session_auth::AuthSession<User, Uuid, SessionPgPool, PgPool>;
 
 #[tokio::main(flavor = "multi_thread")]
 async fn main() -> anyhow::Result<()> {
@@ -51,3 +53,5 @@ async fn main() -> anyhow::Result<()> {
     axum::serve(listener, app).await.unwrap();
     Ok(())
 }
+
+
