@@ -1,3 +1,7 @@
 target/
 node_modules/
 .claude/
+ui_ref/
+.env
+.env.local
+.env.*.local
