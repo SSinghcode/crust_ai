@@ -18,7 +18,7 @@ pub fn SyntectHighlighterCode(
     let on_copy = move |_| {
         #[cfg(not(feature = "ssr"))]
         {
-            if let Some(clipboard) = web_sys::window().and_then(|w| w.navigator().clipboard()) {
+            if let Some(clipboard) = web_sys::window().and_then(|w| Some(w.navigator().clipboard())) {
                 let _ = clipboard.write_text(&code_for_copy);
             }
         }
