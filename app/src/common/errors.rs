@@ -10,13 +10,17 @@ pub enum AppError {
     NotFound(String),
     #[error("Internal Server Error")]
     InternalServerError,
-}
+    #[error("Unauthorized")]
+Unauthorized,
+
+}   
 
 impl AppError {
     pub fn status_code(&self) -> StatusCode {
         match self {
             AppError::NotFound(_) => StatusCode::NOT_FOUND,
             AppError::InternalServerError => StatusCode::INTERNAL_SERVER_ERROR,
+            AppError::Unauthorized=>StatusCode::UNAUTHORIZED,
         }
     }
 }
